@@ -106,6 +106,7 @@ button {
     border: 0;
     border-radius: 50%;
     background-color: var(--clr-blue-300);
+    transition: .5s ease;
 }
 
 .share-box {
