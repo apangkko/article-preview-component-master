@@ -107,6 +107,7 @@ button {
     border-radius: 50%;
     background-color: var(--clr-blue-300);
     transition: .5s ease;
+    z-index: 99;
 }
 
 .share-box {
@@ -115,7 +116,7 @@ button {
     background-color: var(--clr-blue-600);
 }
 
-.share-box.active {
+.author-share.active > .share-box {
     display: flex;
     position: absolute;
     left: 0;
@@ -137,11 +138,11 @@ button {
     flex-grow: 2;
 }
 
-.btn-share:hover, .btn-share.active, .share-box.active > .btn-share {
+.author-share.active .btn-share {
     background-color: var(--clr-blue-500);
 }
 
-.btn-share:hover > .icon-share, .btn-share.active > .icon-share, .share-box.active > .btn-share > .icon-share {
+.author-share.active .btn-share > .icon-share {
     filter: brightness(0) invert(1);
 }
 
@@ -183,7 +184,7 @@ button {
         padding: 0 2rem;
     }
 
-    .share-box.active {
+    .author-share.active > .share-box {
         width: auto;
         left: auto;
         right: -4.7rem;
@@ -193,7 +194,7 @@ button {
         box-shadow: 0 12px 10px -5px hsla(217, 19%, 35%, 0.2);
     }
 
-    .share-box.active::after {
+    .author-share.active > .share-box::after {
         border: 1em solid transparent;
         border-top-color: var(--clr-blue-600);
         content: '';
@@ -204,10 +205,6 @@ button {
         width: 0;
         height: 0;
         filter: drop-shadow(0 7px 10px hsla(217, 19%, 35%, 0.2));
-    }
-
-    .share-box.active > .btn-share {
-        display: none;
     }
 }
 
