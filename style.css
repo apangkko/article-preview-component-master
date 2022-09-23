@@ -197,11 +197,7 @@ button {
         box-shadow: 0 12px 10px -5px hsla(217, 19%, 35%, 0.2);
     }
 
-    .author-share.active > .share-box {
-        opacity: 1;
-    }
-
-    .author-share.active > .share-box::after {
+    .share-box::after {
         border: 1em solid transparent;
         border-top-color: var(--clr-blue-600);
         content: '';
@@ -213,5 +209,10 @@ button {
         height: 0;
         filter: drop-shadow(0 7px 10px hsla(217, 19%, 35%, 0.2));
     }
+
+    .author-share.active > .share-box {
+        opacity: 1;
+    }
+
 }
 
