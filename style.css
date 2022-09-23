@@ -111,18 +111,20 @@ button {
 }
 
 .share-box {
-    display: none;
-    column-gap: 1.2rem;
-    background-color: var(--clr-blue-600);
-}
-
-.author-share.active > .share-box {
-    display: flex;
     position: absolute;
+    width: 100%;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 100%;
+    column-gap: 1.2rem;
+    background-color: var(--clr-blue-600);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.author-share.active > .share-box {
+    opacity: 1;
+    transition: all .3s ease;
 }
 
 .share-text {
@@ -184,14 +186,19 @@ button {
         padding: 0 2rem;
     }
 
-    .author-share.active > .share-box {
+    .share-box {
         width: auto;
         left: auto;
         right: -4.7rem;
         top: -4.7rem;
         bottom: auto;
         border-radius: .5rem;
+        opacity: 0;
         box-shadow: 0 12px 10px -5px hsla(217, 19%, 35%, 0.2);
+    }
+
+    .author-share.active > .share-box {
+        opacity: 1;
     }
 
     .author-share.active > .share-box::after {
@@ -200,7 +207,7 @@ button {
         content: '';
         margin-left: -1em;
         position: absolute;
-        top: 100%;
+        top: 99%;
         left: 50%;
         width: 0;
         height: 0;
